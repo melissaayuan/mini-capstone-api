@@ -10,4 +10,9 @@ class Product
   @image_url = options[:image_url]
   @description = options[:description]
   end
+
+  def product_one
+    product = Product.first
+    render json: product.as_json
+  end
 end
