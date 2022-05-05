@@ -4,6 +4,14 @@ GET http://localhost:3000/products.json
 ### Products create
 
 POST http://localhost:3000/products.json
+Content-Type: application/json
+
+{
+"name": "blueberry", 
+"price": "2", 
+"image_url": "www.blueberry.com", 
+"description": "blue"
+}
 
 ### Products show
 
