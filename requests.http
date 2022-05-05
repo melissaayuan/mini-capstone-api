@@ -18,9 +18,14 @@ Content-Type: application/json
 GET http://localhost:3000/products/1.json
 
 ### Product update
-PATCH http://localhost:3000/products/5
+PATCH http://localhost:3000/products/5.json
 Content-Type: application/json
 
 {
-  "name": "yellow watermelon"
+  "name": "yellow watermelon",
+  "price": "3"
 }
+
+### Delete product
+
+DELETE http://localhost:3000/products/2.json
