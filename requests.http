@@ -16,3 +16,11 @@ Content-Type: application/json
 ### Products show
 
 GET http://localhost:3000/products/1.json
+
+### Product update
+PATCH http://localhost:3000/products/5
+Content-Type: application/json
+
+{
+  "name": "yellow watermelon"
+}
