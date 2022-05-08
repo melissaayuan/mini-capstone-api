@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
   def show
     product = Product.find_by(id: params["id"])
     render json: product.as_json
+    render json: product.as_json(methods: [:friendly_created_at])
   end 
 
   def update
@@ -36,6 +37,9 @@ class ProductsController < ApplicationController
      product.destroy
      render json: {message: "Product successfully destory"}
   end
+
+  
+
 end
 
   
