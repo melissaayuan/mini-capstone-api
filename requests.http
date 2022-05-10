@@ -23,7 +23,7 @@ Content-Type: application/json
 
 {
   "name": "yellow watermelon",
-  "price": "3"
+  "price": -3
 }
 
 ### Delete product
