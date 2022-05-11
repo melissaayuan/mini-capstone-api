@@ -7,10 +7,10 @@ POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-"name": "blueberry", 
-"price": "2", 
-"image_url": "www.blueberry.com", 
-"description": "blue"
+"name": "eggplant", 
+"price": "4", 
+"image_url": "www.papaya.com", 
+"description": "red, small, round"
 }
 
 ### Products show

@@ -5,11 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-product = Product.new(name: "apple", price: "2", image_url: "www.apple.com", description: "red apples")
-product.save
-product = Product.new(name: "banana", price: "1", image_url: "www.banana.com", description: "yellow bananas")
-product.save
-product = Product.new(name: "pear", price: "3", image_url: "www.pear.com", description: "green pears")
-product.save
-product = Product.new(name: "coconut", price: "4", image_url: "www.coconut.com", description: "green coconuts")
-product.save
+
+#supplier = Supplier.create(name: "Nike", email: "info@nike.com", #phone_number_string: "800-555-5555")
+#supplier = Supplier.create(name: "Adidas", email: "info@adidas.net", phone_number_string: "123-456-7890")
+
+#Product.create(name: "apple", price: "2", description: "red apples")
+#product.save
+#Product.create(name: "banana", price: "1",, description: "yellow bananas")
+#product.save
+#Product.create(name: "pear", price: "3", description: "green pears")
+#product.save
+#Product.create(name: "coconut", price: "4", description: "green coconuts")
+#product.save
+
+Image.create(product_id: 1, url: "https://www.apples.com")
+Image.create(product_id: 2, url: "https://www.banana.com")
+Image.create(product_id: 3, url: "https://www.pear.com")
+Image.create(product_id: 3, url: "https://www.redpear.com")
+

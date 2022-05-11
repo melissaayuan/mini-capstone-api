@@ -1,46 +1,41 @@
 class ProductsController < ApplicationController
 
   def index
-    products = Product.all 
-    render json: products.as_json
+    @products = Product.all 
+    render template: "products/index"
   end
 
   def create
-    product = Product.new(
+    @product = Product.new(
       name: params["name"], 
       price: params["price"], 
-      image_url: params["image_url"],
       description: params["description"],
     )
     
     if @product.save
-      render json product.as_json
-   else
-    render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity     
+      render template: "products/show"
+    else
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+    end
+    
    end
 
-  end
-
+ 
   def show
-    product = Product.find_by(id: params["id"])
-    render json: product.as_json
-    render json: product.as_json(methods: [:friendly_created_at])
+    @product = Product.find_by(id: params[:id])
+    render template: "products/show"
+    
   end 
 
   def update
-    product = Product.find_by(id:params["id"])
-    product.name = params["name"] || product.name
-    product.price = params["price"] || product.price
-    product.image_url = params["image_url"] ||product.image_url
-    product.description = params["description"] || product.description
-    product.save 
-    render json: product.as_json
+    @product = Product.find_by(id:params["id"])
+    @product.name = params["name"] || @product.name
+    @product.price = params["price"] || @product.price
+    @product.description = params["description"] || @product.description
 
-    if @product.save
-      render product.as_json
-    else
-      render json: { @product.errors.full_messages }, status: :unprocessable_entity
-    end
+     @product.save
+      render template: "products/show"
+   
   end
 
   def destroy
