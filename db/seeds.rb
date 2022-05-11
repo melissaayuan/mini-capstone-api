@@ -18,8 +18,11 @@
 #Product.create(name: "coconut", price: "4", description: "green coconuts")
 #product.save
 
-Image.create(product_id: 1, url: "https://www.apples.com")
-Image.create(product_id: 2, url: "https://www.banana.com")
-Image.create(product_id: 3, url: "https://www.pear.com")
-Image.create(product_id: 3, url: "https://www.redpear.com")
+#Image.create(product_id: 1, url: "https://www.apples.com")
+#Image.create(product_id: 2, url: "https://www.banana.com")
+#Image.create(product_id: 3, url: "https://www.pear.com")
+#Image.create(product_id: 3, url: "https://www.redpear.com")
 
+Image.create(product_id: 6, url: "https://images-prod.healthline.com/hlcmsresource/images/AN_images/blueberries-1296x728-feature.jpg")
+Image.create(product_id: 6, url: "https://www.freshpoint.com/wp-content/uploads/commodity-blueberry.jpg")
+Image.create(product_id: 6, url: "https://cdn.shopify.com/s/files/1/0059/8835/2052/products/Aurora_Blueberry_1_650x.jpg?v=1619037632")
