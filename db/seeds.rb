@@ -23,6 +23,9 @@
 #Image.create(product_id: 3, url: "https://www.pear.com")
 #Image.create(product_id: 3, url: "https://www.redpear.com")
 
-Image.create(product_id: 6, url: "https://images-prod.healthline.com/hlcmsresource/images/AN_images/blueberries-1296x728-feature.jpg")
-Image.create(product_id: 6, url: "https://www.freshpoint.com/wp-content/uploads/commodity-blueberry.jpg")
-Image.create(product_id: 6, url: "https://cdn.shopify.com/s/files/1/0059/8835/2052/products/Aurora_Blueberry_1_650x.jpg?v=1619037632")
+#Image.create(product_id: 6, url: "https://images-prod.healthline.com/hlcmsresource/images/AN_images/blueberries-1296x728-feature.jpg")
+#Image.create(product_id: 6, url: "https://www.freshpoint.com/wp-content/uploads/commodity-blueberry.jpg")
+#Image.create(product_id: 6, url: "https://cdn.shopify.com/s/files/1/0059/8835/2052/products/Aurora_Blueberry_1_650x.jpg?v=1619037632")
+
+Image.create(product_id: 7, url: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cranberry_bog.jpg")
+Image.create(product_id: 7, url: "https://tastesbetterfromscratch.com/wp-content/uploads/2016/11/Cranberry-Relish-2.jpg")
