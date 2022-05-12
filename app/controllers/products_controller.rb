@@ -7,20 +7,18 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(
-      name: params[:name], 
-      price: params[:price], 
-      description: params[:description:]
-      supplier_id: params[:supplier_id:],
+      name: params[:name],
+      price: params[:price],
+      description: params[:description],
+      supplier_id: params[:supplier_id],
     )
-    
     if @product.save
       Image.create(product_id: @product.id, url: params[:image_url])
       render template: "products/show"
     else
       render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
     end
-    
-   end
+  end
 
  
   def show
