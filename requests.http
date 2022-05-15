@@ -58,7 +58,7 @@ Content-Type: application/json
 
 {
 
-  "product_id": 2,
+  "product_id": 1,
   "quantity": 1,
   "subtotal": 9,
   "tax": 1.20,
@@ -68,11 +68,15 @@ Content-Type: application/json
 
 ### Orders show
 
+
 GET http://localhost:3000/orders/1.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI3MTQ3NTR9.MjoSNKgKjlH8T0A2Ni1BHaPPRu275pzLdXoWyCVJ81k
 
 
 ### Orders index
 
+
 GET http://localhost:3000/orders.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI3MTQ3NTR9.MjoSNKgKjlH8T0A2Ni1BHaPPRu275pzLdXoWyCVJ81k
 
 
