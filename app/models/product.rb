@@ -15,6 +15,7 @@ class Product < ApplicationRecord
   #def images
   #  Image.where(product_id: id)
   #end
+  has_many :orders
 
   def friendly_created_at
     created_at.strftime("%B %e, %Y")
