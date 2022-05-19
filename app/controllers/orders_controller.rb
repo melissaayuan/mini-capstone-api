@@ -1,9 +1,12 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user
 
   def index
+
     @orders = Order.all
     orders = Order.where(user_id: current_user.id)
     render template: "orders/index"
+
   end
   
   def show
@@ -13,21 +16,29 @@ class OrdersController < ApplicationController
 
   
   def create
-    product = Product.find_by(id: params[:product_id])
-    calculated_subtotal = product.price * params[:quantity].to_i
-    calculated_tax = calculated_subtotal * 0.09
+    carted_products = CartedProduct.where(user_id: current_user.id, status: "carted")
+    calculated_subtotal = 0
+    calculated_tax = 0
+    calculated_total = 0
+    carted_products.each do |carted_product|
+      calculated_subtotal += carted_product.product.price * carted_product.quantity
+      calculated_tax += carted_product.product.tax * carted_product.quantity
+    end
+    
+    
     calculated_total = calculated_subtotal + calculated_tax
 
-    @order = Order.new(
+    order = Order.new(
       user_id: current_user.id,
-      product_id: params[:product_id],
-      quantity: params[:quantity],
       subtotal: calculated_subtotal,
       tax: calculated_tax,
       total: calculated_total,
     )
-    @order.save 
-    render template: "orders/show"
+
+    order.save 
+
+    carted_products.update_all(status: "purchased", order_id: order.id)
+    render json: order.as_json
 
   end
 

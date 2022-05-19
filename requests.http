@@ -1,16 +1,22 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTMwMDU2ODJ9.kIoDSsonfADSCcGiRrOBovNI0wAW802JsMC9kBp9iqc
+
 ### Products index
 GET http://localhost:3000/products.json
+
+
 
 ### Products create
 
 POST http://localhost:3000/products.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
-"name": "eggplant", 
+"name": "greenpapaya", 
 "price": "4", 
 "image_url": "www.papaya.com", 
-"description": "red, small, round"
+"description": "red, small, round",
+"supplier_id": 1
 }
 
 ### Products show
@@ -18,9 +24,12 @@ Content-Type: application/json
 GET http://localhost:3000/products/1.json
 Content-Type: application/json
 
+
+
 ### Product update
 PATCH http://localhost:3000/products/5.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
   "name": "yellow watermelon",
@@ -28,8 +37,8 @@ Content-Type: application/json
 }
 
 ### Delete product
-
-DELETE http://localhost:3000/products/2.json
+DELETE http://localhost:3000/products/9.json
+Authorization: Bearer {{jwt}}
 
 ### Users create (signup)
 POST http://localhost:3000/users.json
@@ -53,16 +62,16 @@ Content-Type: application/json
 
 ### Orders create
 POST http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI3MTQ3NTR9.MjoSNKgKjlH8T0A2Ni1BHaPPRu275pzLdXoWyCVJ81k
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
 
-  "product_id": 1,
-  "quantity": 1,
-  "subtotal": 9,
+  "product_id": 3,
+  "quantity": 2,
+  "subtotal": 6,
   "tax": 1.20,
-  "total": 10.20
+  "total": 7.20
   
   }
 
@@ -70,13 +79,33 @@ Content-Type: application/json
 
 
 GET http://localhost:3000/orders/1.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI3MTQ3NTR9.MjoSNKgKjlH8T0A2Ni1BHaPPRu275pzLdXoWyCVJ81k
+Authorization: Bearer {{jwt}}
 
 
 ### Orders index
 
 
 GET http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI3MTQ3NTR9.MjoSNKgKjlH8T0A2Ni1BHaPPRu275pzLdXoWyCVJ81k
+Authorization: Bearer {{jwt}}
 
+### Carted_Products create
+POST http://localhost:3000/carted_products.json 
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "user_id": 1,
+  "product_id": 1,
+  "quantity": 1,
+  "status": "carted",
+  "order_id": 1
+}
+
+### CARTED PRODUCTS INDEX
+GET http://localhost:3000/carted_products.json
+Authorization: Bearer {{jwt}}
+
+### CARTED PRODUCTS DESTROY
+DELETE http://localhost:3000/carted_products/5.json
+Authorization: Bearer {{jwt}}
 
