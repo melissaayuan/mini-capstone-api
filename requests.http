@@ -1,18 +1,21 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTMwMDU2ODJ9.kIoDSsonfADSCcGiRrOBovNI0wAW802JsMC9kBp9iqc
+
+@host = http://localhost:3000
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTUzMzU2NTR9.1_xP6gfnqPy97E9jL8nrQIc7d0RdcpRRrpj7xdDFjME
+
 
 ### Products index
-GET http://localhost:3000/products.json
+GET {{host}}/products.json
 
 
 
 ### Products create
 
-POST http://localhost:3000/products.json
+POST {{host}}/products.json
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-"name": "greenpapaya", 
+"name": "greenpapaya2", 
 "price": "4", 
 "image_url": "www.papaya.com", 
 "description": "red, small, round",
@@ -21,38 +24,38 @@ Authorization: Bearer {{jwt}}
 
 ### Products show
 
-GET http://localhost:3000/products/1.json
+GET {{host}}/products/1.json
 Content-Type: application/json
 
 
 
 ### Product update
-PATCH http://localhost:3000/products/5.json
+PATCH {{host}}/products/5.json
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "name": "yellow watermelon",
-  "price": -3
+  "name": "yellow watermelon3",
+  "price": 3
 }
 
 ### Delete product
-DELETE http://localhost:3000/products/9.json
+DELETE {{host}}/products/9.json
 Authorization: Bearer {{jwt}}
 
 ### Users create (signup)
-POST http://localhost:3000/users.json
+POST {{host}}/users.json
 Content-Type: application/json
 
 {
-  "name": "melissa",
-  "email": "melissa@test.com",
-  "password": "password1",
-  "password_confirmation": "password1"
+  "name": "melissayy",
+  "email": "melissayy@test.com",
+  "password": "password2",
+  "password_confirmation": "password2"
 }
 
 ### Sessions create (login)
-POST http://localhost:3000/sessions.json
+POST {{host}}/sessions.json
 Content-Type: application/json
 
 {
@@ -61,7 +64,7 @@ Content-Type: application/json
 }
 
 ### Orders create
-POST http://localhost:3000/orders.json
+POST {{host}}/orders.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
@@ -78,18 +81,18 @@ Content-Type: application/json
 ### Orders show
 
 
-GET http://localhost:3000/orders/1.json
+GET {{host}}/orders/1.json
 Authorization: Bearer {{jwt}}
 
 
 ### Orders index
 
 
-GET http://localhost:3000/orders.json
+GET {{host}}/orders.json
 Authorization: Bearer {{jwt}}
 
 ### Carted_Products create
-POST http://localhost:3000/carted_products.json 
+POST {{host}}/carted_products.json 
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
@@ -102,10 +105,10 @@ Authorization: Bearer {{jwt}}
 }
 
 ### CARTED PRODUCTS INDEX
-GET http://localhost:3000/carted_products.json
+GET {{host}}/carted_products.json
 Authorization: Bearer {{jwt}}
 
 ### CARTED PRODUCTS DESTROY
-DELETE http://localhost:3000/carted_products/5.json
+DELETE {{host}}/carted_products/5.json
 Authorization: Bearer {{jwt}}
 
