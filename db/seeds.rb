@@ -31,8 +31,8 @@
 #Image.create(product_id: 7, url: "https://#tastesbetterfromscratch.com/wp-content/uploads/2016/11/#Cranberry-Relish-2.jpg")
 
 
-User.create!(name: "Peter", email: "peter@email.com", password: "password", admin: true)
-User.create!(name: "Test", email: "test@email.com", password: "password")
+User.create!(name: "Peter", email: "peter1@email.com", password: "password", admin: true)
+User.create!(name: "Test", email: "test1@email.com", password: "password")
 
 Supplier.create!(name: "Amazon", email: "amazon@test.com", phone_number_string: "4232343234")
 Supplier.create!(name: "ThinkGeek", email: "thinkgeek@test.com", phone_number_string: "6232343234")
