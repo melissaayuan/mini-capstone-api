@@ -43,7 +43,7 @@ Product.create!(supplier_id: 1, name: "Lightsaber", price: 270, description: "Pa
 Product.create!(supplier_id: 1, name: "Space Cowboy Laser Gun", price: 170, description: "This weapon has no other description than, Shiney!")
 Product.create!(supplier_id: 2, name: "DnD Dice set", price: 57, description: "Take down mighty dragons with this timeless set of 20 sided wonders")
 Product.create!(supplier_id: 1, name: "Sonic Screwdriver", price: 9, description: "The Doctor's sciencey magic wand to get out of tight spots. Note: does not work on wood")
-Product.create!(supplier_id: 1, name: "Yoda sleeping bag", price: 40, description: "For real")
+Product.create!(supplier_id: 1, name: "Yoda sleeping bag", price: 40, description: "For real asdflasdfaadslfjasdfa")
 
 Image.create!(product_id: 1, url: "https://i.pinimg.com/236x/14/4a/0b/144a0bffe37f29f414e2dae2bd0141cf.jpg")
 Image.create!(product_id: 2, url: "http://www.notcot.com/images/guide.gif")
