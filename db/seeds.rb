@@ -34,8 +34,8 @@
 User.create!(name: "Peter", email: "peter@email.com", password: "password", admin: true)
 User.create!(name: "Test", email: "test@email.com", password: "password")
 
-Supplier.create!(name: "Amazon", email: "amazon@test.com", phone_number: "4232343234")
-Supplier.create!(name: "ThinkGeek", email: "thinkgeek@test.com", phone_number: "6232343234")
+Supplier.create!(name: "Amazon", email: "amazon@test.com", phone_number_string: "4232343234")
+Supplier.create!(name: "ThinkGeek", email: "thinkgeek@test.com", phone_number_string: "6232343234")
 
 Product.create!(supplier_id: 1, name: "WNYX Mug", price: 2, description: "Get your morning news once you wake up with a cup of joe from... well Joe. He made it with his homemade duct tape")
 Product.create!(supplier_id: 2, name: "Hitchhiker's Guide to the Galaxy", price: 42, description: "In many of the more relaxed civilizations on the Outer Eastern Rim of the Galaxy, the Hitch-Hiker's Guide has already supplanted the great Encyclopaedia Galactica as the standard repository of all knowledge and wisdom, for though it has many omissions and contains much that is apocryphal, or at least wildly inaccurate, it scores over the older, more pedestrian work in two important respects.")
